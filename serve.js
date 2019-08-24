@@ -1,3 +1,10 @@
+/*
+ * @Author: web_XL 
+ * @Date: 2019-08-24 22:42:07 
+ * @Last Modified by:   web_XL 
+ * @Last Modified time: 2019-08-24 22:42:07 
+ */
+
 const http = require('http')
 // 即使跨域了 其实请求已经发送到 目标服务器 并且得到了返回 只是浏览器 知道这个是跨域的 就勿略了返回值
 const serve = http.createServer(function (req, res) {
