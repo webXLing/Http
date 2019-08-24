@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div>html</div>
+</body>
+<script>
+  // let http = new XMLHttpRequest()
+  // http.open('GET', 'http://127.0.0.1:8888/')
+  // http.send()
+  // fetch('http://localhost:8889/', {
+  //   // method: 'POST',
+  //   method: 'PUT',
+
+  //   headers: {
+  //     'Y-test': 123
+  //   }
+  // })
+  // 跨域的时候 自定义的头 是要服务端设置过得 以及方法除了 post get head其他方法是要设置过得
+  // methods除了 post get head
+  // content-type text/palin  multipart/form-data application/x-www-form-urlencoded
+  // 其他都要进行 cors 预请求
+</script>
+<!-- <script src="http://127.0.0.1:8888/">
+  // link img script src 是允许跨域的
+</script> -->
+
+<!-- 测试 Cache-Control -->
+<script src="script.js">
+  // link img script src 是允许跨域的
+</script>
+
+<!-- Cache-Control
+public http 请求返回的过程中 经过的路径 都可以缓存这份数据 代理服务器 发起服务器 等
+private 只有发起请求的浏览器 才能缓存
+no-cache 都不可以缓存 -->
+
+<!-- max-age =<seconds> 这个缓存 什么时候到期
+s-maxage=<seconds> 代理服务器中生效比max-age 权限大
+max-stale=<seconds> 发起端 浏览器端 设置 在限定时间能 及时 缓存过期 依然可以使用缓存 -->
+
+<!-- 如果 max-age 时间已经过期 必须去发送请求 去服务端验证
+must-revalidate
+proxy-revalidate -->
+
+<!-- no-cache 你可以在本地 缓存 但是你要去 服务器验证
+no-store 你本地 和代理服务器 都不能缓存 都要去服务器那里去拿 -->
+
+</html>
