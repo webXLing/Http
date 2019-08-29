@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,9 +10,33 @@
 
 <body>
   <div>html</div>
+  <form action="/test" id="form" method="POST" enctype="multipart/form-data">
+    <!-- body 里面 key value -->
+    <!-- 
+    multipart/form-data POST 走body
+    文件要通过二进制 传输 不能通过字符串 要另外拆出来 所以要用 multipart/form-data
+    多部分的 表单数据 -->
+    <input type="text" name='name'>
+    <input type="text" name='password'>
+    <input type="file" name='xlfile'>
+    <input type="submit" value="提交">
+  </form>
+  <script>
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault()
+      let form = document.getElementById('form')
+      let formDate = new FormData(form)
+      fetch('/test', {
+        method: 'POST',
+        body: formDate
+      })
+    })
+
+  </script>
 </body>
 <script>
-  
+
   // let http = new XMLHttpRequest()
   // http.open('GET', 'http://127.0.0.1:8888/')
   // http.send()
@@ -36,9 +58,9 @@
 </script> -->
 
 <!-- 测试 Cache-Control -->
-<script src="script.js">
+<!-- <script src="script.js">
   // link img script src 是允许跨域的
-</script>
+</script> -->
 
 <!-- Cache-Control
 public http 请求返回的过程中 经过的路径 都可以缓存这份数据 代理服务器 发起服务器 等
