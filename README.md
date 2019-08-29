@@ -40,3 +40,34 @@ if (etag === '77') {
   // If - Modified - Since: 123
   // // If - None - Match: 77
 ```
+
+##### 文件上传 压缩
+```
+application/x-www-form-urlencoded key =>value 形式
+
+multipart/form-data POST 
+    走body
+    文件要通过二进制 传输 不能通过字符串 要另外拆出来 所以要用 multipart/form-data
+    多部分的 表单数据
+
+let server = http.createServer((request, response) => {
+  let res = fs.readFileSync('./index.html')
+  response.writeHead(200, {
+    'Content-Type': 'text/html', // 返回的内容格式
+    'Content-Encoding': 'gzip' // 内容的编码方式
+  })
+  // response.end(res)
+  response.end(zlib.gzipSync(res))
+
+})
+```
+##### 301 302
+######  302临时重定向
+######  301永久重定向
+######  会导致浏览器对这个请求 结果缓存
+######  之后访问该地址  
+######  直接跳转那本地缓存 虽然请求到了服务器但是会忽略其结果  
+######  用户不清除缓存 服务端怎么改变都没用  
+######  所以301 是非常慎重的
+
+######  302临时重定向 每次通过服务端 返回头  Location 决定重定向位置
