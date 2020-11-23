@@ -2,7 +2,7 @@
  * @Author: web_XL
  * @Date: 2019-09-01 16:48:41
  * @Last Modified by: web_XL
- * @Last Modified time: 2019-09-02 00:04:48
+ * @Last Modified time: 2019-09-02 21:54:33
  */
 // command+shift+G
 //：sudo brew services start nginx
@@ -23,7 +23,7 @@
 // 配置nginx域名转发
 
 // .配置本定host映射，否则无法解析出域名ip
-// sudo vi / etc / hosts
+// sudo vi /etc/hosts
 // 输入 E，进入编辑；进入编辑界面后，
 // 输入  i   进行插入；
 // 完成插入后按ESC键，

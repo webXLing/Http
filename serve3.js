@@ -2,7 +2,7 @@
  * @Author: web_XL 
  * @Date: 2019-08-29 22:31:41 
  * @Last Modified by: web_XL
- * @Last Modified time: 2019-09-01 17:03:30
+ * @Last Modified time: 2019-09-02 22:00:50
  */
 // 压缩  文件上传
 const http = require('http')
@@ -10,6 +10,7 @@ const fs = require('fs')
 const zlib = require('zlib')
 
 let server = http.createServer((request, response) => {
+  console.log(request.headers.host)
   let res = fs.readFileSync('./index.html')
   response.writeHead(200, {
     'Content-Type': 'text/html', // 返回的内容格式
